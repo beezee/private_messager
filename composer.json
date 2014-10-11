@@ -1,0 +1,18 @@
+{
+    "name": "beezee/privatemessenger",
+    "description": "Generic system for sending and receiving private messages",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Brian Zeligson",
+            "email": "brian.zeligson@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "PM\\": "src/PM/"
+      }
+    }
+}
