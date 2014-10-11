@@ -79,6 +79,11 @@ class Message extends \PM\Base
       function($c) use($self) { return $self !== $c; }));
   }
 
+  public function send()
+  {
+    return $this->adapter()->send_message($this);
+  }
+
   public function __toString()
   {
     return parent::__toString().": $this->id";

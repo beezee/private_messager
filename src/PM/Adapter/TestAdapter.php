@@ -14,4 +14,9 @@ class TestAdapter extends \PM\Adapter
   {
 
   }
+
+  public function send_message($message)
+  {
+
+  }
 }

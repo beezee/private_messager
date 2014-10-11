@@ -66,5 +66,18 @@ class MessageTest extends \Enhance\TestFixture
     \Enhance\Assert::areIdentical(array($msg3, $msg4), $msg2->siblings());
     \Enhance\Assert::areIdentical(array($msg2, $msg4), $msg3->siblings());
     \Enhance\Assert::areIdentical(array(), $msg1->siblings());
+    $adapter->verifyExpectations();
+  }
+
+  public function send_passes_self_to_adapter()
+  {
+    $msg = new \PM\Message();
+    $adapter = \Enhance\MockFactory::createMock('\PM\Adapter\TestAdapter');
+    $msg->set_adapter($adapter);
+    $adapter->addExpectation(
+      \Enhance\Expect::method('send_message')
+        ->with($msg)->returns(true)->times(1));
+    \Enhance\Assert::isTrue($msg->send());
+    $adapter->verifyExpectations();
   }
 }
