@@ -9,4 +9,9 @@ class TestAdapter extends \PM\Adapter
   {
 
   }
+
+  public function get_all_children_of_message($message)
+  {
+
+  }
 }
